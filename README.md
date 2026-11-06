@@ -66,9 +66,11 @@ Heatmaps for the most confident correct detections (top), the worst misses (midd
 
 ```
 notebooks/
+  00_colab_prepare_data.ipynb (Colab only) download, filter and shrink the images into Google Drive
   01_data_exploration.ipynb   download, label analysis, cohort, patient-level split
   02_train.ipynb              fine-tuning, early stopping, threshold selection, run comparison
   03_evaluate.ipynb           test metrics with CIs, subgroup analysis, Grad-CAM
+data/splits/                  the fixed train / validation / test split (CSV)
 reports/                      figures and test metrics used in this README
 space/                        Gradio demo deployed to Hugging Face Spaces
 requirements.txt
@@ -81,7 +83,17 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Run the notebooks in order. Notebook 1 downloads about 42 GB of images. The notebooks use the Mac GPU (MPS) when available and otherwise fall back to the CPU.
+Run the notebooks in order. Notebook 1 downloads about 42 GB of images. The notebooks use a CUDA GPU or the Mac GPU (MPS) when one is available, and otherwise the CPU.
+
+### On Google Colab (free GPU, nothing downloaded to your computer)
+
+1. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vutr2/chest_xray_classifier/blob/main/notebooks/00_colab_prepare_data.ipynb) **Once:** `00_colab_prepare_data` does the data preparation on Colab:
+   - downloads the archives
+   - keeps the 44,828 X-rays listed in `data/splits/`
+   - shrinks them to 512×512
+   - saves a single `images_512.tar` (about 5 GB) to `MyDrive/chest_xray_classifier/` in Google Drive
+2. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vutr2/chest_xray_classifier/blob/main/notebooks/02_train.ipynb) `02_train`: first choose **Runtime → Change runtime type → T4 GPU**. The first cell connects Google Drive and unpacks the images, and checkpoints are saved to Drive.
+3. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vutr2/chest_xray_classifier/blob/main/notebooks/03_evaluate.ipynb) `03_evaluate`: reads the checkpoint from Drive and writes its reports there.
 
 To use the trained model without training, run `pip install huggingface_hub` and then:
 
