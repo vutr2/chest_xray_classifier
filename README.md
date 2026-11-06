@@ -2,7 +2,7 @@
 
 Detecting lung nodules and masses on chest X-rays with a fine-tuned DenseNet-121, evaluated on a held-out test set of patients the model never saw.
 
-**Trained model:** [Hugging Face](https://huggingface.co/vutr2/chest-xray-nodule-densenet121) · **Data:** [NIH ChestX-ray14](https://nihcc.app.box.com/v/ChestXray-NIHCC) · **Stack:** PyTorch, torchvision, scikit-learn, pytorch-grad-cam
+**Trained model:** [Hugging Face](https://huggingface.co/trungvu0307/chest-xray-nodule-densenet121) · **Data:** [NIH ChestX-ray14](https://nihcc.app.box.com/v/ChestXray-NIHCC) · **Stack:** PyTorch, torchvision, scikit-learn, pytorch-grad-cam
 
 > Research and educational project. Not a medical device and not for clinical use.
 
@@ -90,7 +90,7 @@ import torch.nn as nn
 from huggingface_hub import hf_hub_download
 from torchvision import models
 
-ckpt = torch.load(hf_hub_download("vutr2/chest-xray-nodule-densenet121", "model.pt"), map_location="cpu")
+ckpt = torch.load(hf_hub_download("trungvu0307/chest-xray-nodule-densenet121", "model.pt"), map_location="cpu")
 model = models.densenet121(weights=None)
 model.classifier = nn.Linear(model.classifier.in_features, 1)
 model.load_state_dict(ckpt["state_dict"])
