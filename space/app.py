@@ -21,7 +21,7 @@ from torchvision import models
 from torchvision.transforms import v2 as T
 
 MODEL_REPO = "trungvu0307/chest-xray-nodule-densenet121"
-GITHUB_URL = "https://github.com/vutr2/chest-xray-nodule-classifier"
+GITHUB_URL = "https://github.com/vutr2/chest_xray_classifier"
 EXAMPLES_DIR = Path(__file__).parent / "examples"
 EXAMPLE_LABELS = json.loads((EXAMPLES_DIR / "labels.json").read_text())   # file name -> NIH label
 
