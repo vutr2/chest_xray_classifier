@@ -2,7 +2,7 @@
 
 Detecting lung nodules and masses on chest X-rays with a fine-tuned DenseNet-121, evaluated on a held-out test set of patients the model never saw.
 
-**Trained model:** [Hugging Face](https://huggingface.co/trungvu0307/chest-xray-nodule-densenet121) · **Data:** [NIH ChestX-ray14](https://nihcc.app.box.com/v/ChestXray-NIHCC) · **Stack:** PyTorch, torchvision, scikit-learn, pytorch-grad-cam
+**Live demo:** [try it on Hugging Face Spaces](https://huggingface.co/spaces/trungvu0307/chest-xray-nodule-demo) · **Trained model:** [Hugging Face](https://huggingface.co/trungvu0307/chest-xray-nodule-densenet121) · **Data:** [NIH ChestX-ray14](https://nihcc.app.box.com/v/ChestXray-NIHCC) · **Stack:** PyTorch, torchvision, scikit-learn, pytorch-grad-cam
 
 > Research and educational project. Not a medical device and not for clinical use.
 
@@ -70,6 +70,7 @@ notebooks/
   02_train.ipynb              fine-tuning, early stopping, threshold selection, run comparison
   03_evaluate.ipynb           test metrics with CIs, subgroup analysis, Grad-CAM
 reports/                      figures and test metrics used in this README
+space/                        Gradio demo deployed to Hugging Face Spaces
 requirements.txt
 ```
 

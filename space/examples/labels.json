@@ -1,0 +1,22 @@
+{
+  "nodule_1.png": {
+    "label": "Nodule",
+    "nih_image": "00010703_000.png"
+  },
+  "mass_1.png": {
+    "label": "Mass",
+    "nih_image": "00010531_003.png"
+  },
+  "normal_1.png": {
+    "label": "No Finding",
+    "nih_image": "00015951_000.png"
+  },
+  "normal_2.png": {
+    "label": "No Finding",
+    "nih_image": "00009684_000.png"
+  },
+  "nodule_2.png": {
+    "label": "Nodule",
+    "nih_image": "00000971_002.png"
+  }
+}

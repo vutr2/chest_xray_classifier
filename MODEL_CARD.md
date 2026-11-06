@@ -14,7 +14,7 @@ metrics:
 
 A DenseNet-121 fine-tuned to flag chest X-rays showing a **lung nodule or mass**, as opposed to a normal X-ray ("No Finding"). It was trained on NIH ChestX-ray14.
 
-**Code, training notebooks and full evaluation:** [github.com/vutr2/chest-xray-nodule-classifier](https://github.com/vutr2/chest-xray-nodule-classifier)
+**Live demo:** [chest-xray-nodule-demo](https://huggingface.co/spaces/trungvu0307/chest-xray-nodule-demo) · **Code, training notebooks and full evaluation:** [github.com/vutr2/chest-xray-nodule-classifier](https://github.com/vutr2/chest-xray-nodule-classifier)
 
 > Research and educational use only. Not a medical device and not for clinical use.
 
